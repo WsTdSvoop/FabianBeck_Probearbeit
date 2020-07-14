@@ -145,7 +145,7 @@ main{
 	margin: 0 0 15px 15px;
 }
 .desiredInput {
-	margin: 10px;
+	margin: 10px 0 5px 15px;
 	width: 300px;
 	height: 80px;
 	text-align: center;
@@ -161,6 +161,11 @@ main{
     float: left;
 	margin: 10px;
 
+}
+::placeholder { /* Most modern browsers support this now. */
+   font-size: 1.2rem;
+   color: #6b6d6f;
+  }
 }
 /**======================================================================
   Footer
