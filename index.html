@@ -1,78 +1,77 @@
 <!DOCTYPE html>
 <html lang="en" ng-app>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
 
-    <title>SevDesk Probearbeit Frontend Fabian Beck</title>
+		<title>SevDesk Probearbeit Frontend Fabian Beck</title>
 
-	<!-- css for this template-->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap" rel="stylesheet">
+		<!-- css for this template-->
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap" rel="stylesheet">
 
 
 	</head>
-  	<body>
+	<body>
+		<div class="container-fluid">
+	    	<div class="row">
+	        	<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+	          		<div class="sidebar-sticky pt-3">
+		            <ul class="nav flex-column">
+		            	<li class="nav-item">
+		                	<a class="nav-link active" href="index.html">
+		                  		<span data-feather="home"></span>
+		                  		Dashboard <span class="sr-only">(current)</span>
+		                	</a>
+		              	</li>
+		              	<li class="nav-item">
+		              		<a class="nav-link" href="details.html">
+		                		<span data-feather="server"></span>
+		                  		Bitcoin Details
+		                	</a>
+		              	</li>
+		              	<li class="nav-item">
+			                <a class="nav-link" href="calculator.html">
+				                  <span data-feather="trending-up"></span>
+				                  Bitcoin Umrechner
+			                </a>
+		              	</li>
+		              	<li class="nav-item">
+		                	<a class="nav-link" href="#">
+		                  		<span data-feather="bar-chart-2"></span>
+		                  		Bitcoin Diagramm
+		                	</a>
+		              	</li>
+		              	<li class="nav-item">
+		                	<a class="nav-link" href="#">
+		                  		<span data-feather="user"></span>
+		                  		Meine Bitcoin
+		                	</a>
+						</li>
+		            </ul>
+		          	</div>
+		        </nav>
 
-	    <div class="container-fluid">
-	      <div class="row">
-	        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-	          <div class="sidebar-sticky pt-3">
-	            <ul class="nav flex-column">
-	              <li class="nav-item">
-	                <a class="nav-link active" href="index.html">
-	                  <span data-feather="home"></span>
-	                  Dashboard <span class="sr-only">(current)</span>
-	                </a>
-	              </li>
-	              <li class="nav-item">
-	                <a class="nav-link" href="details.html">
-	                  <span data-feather="server"></span>
-	                  Bitcoin Details
-	                </a>
-	              </li>
-	              <li class="nav-item">
-	                <a class="nav-link" href="calculator.html">
-	                  <span data-feather="trending-up"></span>
-	                  Bitcoin Umrechner
-	                </a>
-	              </li>
-	              <li class="nav-item">
-	                <a class="nav-link" href="#">
-	                  <span data-feather="bar-chart-2"></span>
-	                  Bitcoin Diagramm
-	                </a>
-	              </li>
-	              <li class="nav-item">
-	                <a class="nav-link" href="#">
-	                  <span data-feather="user"></span>
-	                  Meine Bitcoin
-	                </a>
-	            </ul>
-	          </div>
-	        </nav>
-
-
-	        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-	        	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-	            	<h1 class="h2">Dashboard</h1>
-	          	</div>
+		        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+		        	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		            	<h1 class="h2">Rechner</h1>
+		          	</div>
 
 				<!-- Bitcoin Preise-->
 				<div class="row">
 
 					<!-- Währung 01 -->
 					<div class="priceRow">
-					  <div class="infoboxCurrency">
-							  <div class="bitcoinCurrency">Bitcoin Preis (EUR)</div>
-					  </div>
-					  <div class="infoboxValue">
-							  <div id="sellEUR" class="">Verkaufspreis: </div>
-							  <div id="buyEUR" class="">Einkaufspreis: </div>
-					  </div>
+						<div class="infoboxCurrency">
+							<div class="bitcoinCurrency">Bitcoin Preis (EUR)</div>
+					  	</div>
+					  	<div class="infoboxValue">
+							<div id="sellEUR" class="">Verkaufspreis: </div>
+							<div id="buyEUR" class="">Einkaufspreis: </div>
+					  	</div>
 					</div>
 
 					<!-- Währung 02 -->

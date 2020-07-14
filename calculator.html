@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+	<head>
+    	<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+
+	    <title>SevDesk Probearbeit Frontend Fabian Beck</title>
+
+		<!-- css for this template-->
+	    <link rel="stylesheet" href="css/style.css" />
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap" rel="stylesheet">
+		<script src="jquery-3.5.1.min.js"></script>
+
+	</head>
+  	<body>
+		<div class="container-fluid">
+	    	<div class="row">
+	        	<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+	          		<div class="sidebar-sticky pt-3">
+		            <ul class="nav flex-column">
+		            	<li class="nav-item">
+		                	<a class="nav-link" href="index.html">
+		                  		<span data-feather="home"></span>
+		                  		Dashboard
+		                	</a>
+		              	</li>
+		              	<li class="nav-item">
+		              		<a class="nav-link" href="details.html">
+		                		<span data-feather="server"></span>
+		                  		Bitcoin Details
+		                	</a>
+		              	</li>
+		              	<li class="nav-item">
+			                <a class="nav-link active" href="calculator.html">
+				                  <span data-feather="trending-up"></span>
+				                  Bitcoin Umrechner <span class="sr-only">(current)</span>
+			                </a>
+		              	</li>
+		              	<li class="nav-item">
+		                	<a class="nav-link" href="#">
+		                  		<span data-feather="bar-chart-2"></span>
+		                  		Bitcoin Diagramm
+		                	</a>
+		              	</li>
+		              	<li class="nav-item">
+		                	<a class="nav-link" href="#">
+		                  		<span data-feather="user"></span>
+		                  		Meine Bitcoin
+		                	</a>
+						</li>
+		            </ul>
+		          	</div>
+		        </nav>
+		        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+		        	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		            	<h1 class="h2">Bitcoin-Rechner</h1>
+		          	</div>
+
+				<!-- Bitcoin Details-->
+					<div class="row">
+						<script>
+							function allInOne(userInput) {
+								// validat and convert Userinput
+								userInput = parseFloat(userInput);
+								// Get information from https://blockchain.info/ticker als JSON OBJ
+								$.post('https://blockchain.info/ticker', function(data) {
+									//Callback Funktion.
+									// "data" enthält das komplette object.
+									// "data.EUR" enthält das unterobject für die Europreise
+									// "data.EUR.buy" enthält den wert buy des objects EUR.
+									//
+									var endWertEUR = userInput/data.EUR.buy;
+									var endWertUSD = userInput/data.USD.buy;
+									var endWertAUD = userInput/data.AUD.buy;
+									var endWertNZD = userInput/data.NZD.buy;
+									var endWertGBP = userInput/data.GBP.buy;
+									//Entwert ausgeben
+									$('#ausgabeEUR').html(endWertEUR)+' = BTC';
+									$('#ausgabeUSD').html(endWertUSD)+' = BTC';
+									$('#ausgabeAUD').html(endWertAUD)+' = BTC';
+									$('#ausgabeNZD').html(endWertNZD)+' = BTC';
+									$('#ausgabeGBP').html(endWertGBP)+' = BTC';
+								});
+							}
+						</script>
+							<div class="priceRow">
+								<div class="desiredAmount">Geben Sie Ihren gewünschten Betrag ein<br />und finden Sie heraus wie viel Bitcoins Sie bekommen</div>
+								<input type="number" class="desiredInput" id="usereingabe" onkeyup="allInOne(this.value);" />
+							</div>
+
+						<!-- Bitcoin pro X Euro -->
+						<div class="priceRow">
+							<div class="infoboxCurrency">
+								<div class="bitcoinCurrency">EUR – Bitcoin pro Betrag</div>
+							</div>
+							<div class="infoboxValue">
+								<div id="ausgabeEUR" class="calcbox"></div>
+							</div>
+						</div>
+
+						<!-- Bitcoin pro X USD -->
+						<div class="priceRow">
+							<div class="infoboxCurrency">
+								<div class="bitcoinCurrency">USD – Bitcoin pro Betrag</div>
+							</div>
+							<div class="infoboxValue">
+								<div id="ausgabeUSD"  class="calcbox"></div>
+							</div>
+						</div>
+
+						<!-- Bitcoin pro X AUD -->
+						<div class="priceRow">
+							<div class="infoboxCurrency">
+								<div class="bitcoinCurrency">AUD – Bitcoin pro Betrag</div>
+							</div>
+							<div class="infoboxValue">
+								<div id="ausgabeAUD"  class="calcbox"></div>
+							</div>
+						</div>
+
+						<!-- Bitcoin pro X NZD -->
+						<div class="priceRow">
+							<div class="infoboxCurrency">
+								<div class="bitcoinCurrency">NZD – Bitcoin pro Betrag</div>
+							</div>
+							<div class="infoboxValue">
+								<div id="ausgabeNZD"  class="calcbox"></div>
+							</div>
+						</div>
+
+						<!-- Bitcoin pro X GBP -->
+						<div class="priceRow">
+							<div class="infoboxCurrency">
+								<div class="bitcoinCurrency">GBP – Bitcoin pro Betrag</div>
+							</div>
+							<div class="infoboxValue">
+								<div id="ausgabeGBP"  class="calcbox"></div>
+							</div>
+						</div>
+
+					</div>
+	        </main>
+	      </div>
+	    </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+          <div class="copyright text-center my-auto">
+            <span>SevDesk Probearbeit Frontend Fabian Beck</span>
+          </div>
+      </footer>
+
+		<!-- plugins and scripts -->
+	    <script src="js/jquery-3.5.1.min.js"></script>
+	    <script src="js/bootstrap.bundle.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+		<script src="js/chart.js"></script>
+	  </body>
+</html>
