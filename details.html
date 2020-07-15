@@ -16,6 +16,7 @@
 
 	</head>
 	<body>
+		<!-- simple Sidebar - Template from Bootstrap-->
   		<div class="container-fluid">
   	    	<div class="row">
   	        	<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
@@ -55,15 +56,18 @@
   		          	</div>
   		        </nav>
 
+				<!-- headline for maincontent-->
   		        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
   		        	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  		            	<h1 class="h2">Rechner</h1>
+  		            	<h1 class="h2">Bitcoin-Details</h1>
   		          	</div>
 
 				<!-- Bitcoin Details-->
 				<div class="row">
 
 					<!-- Marktkapitalisierung-->
+					<!-- get information from https://blockchain.info/q/marketcap als JSON OBJ
+						ersetzt "id" mit der zugegriffenen Information übergeben von getMarketcap.send(); (js)-->
 					<div class="priceRow">
 					  <div class="statsboxCurrency">
 							  <div class="bitcoinCurrency">Marktkapitalisierung:</div>
@@ -73,6 +77,8 @@
 					  </div>
 					</div>
 					<!-- Anzahl aller Bitcoins im Umlauf-->
+					<!-- get information from https://api.blockchain.info/stats als JSON OBJ
+						ersetzt "id" mit der zugegriffenen Information übergeben von getStats.send(); (js)-->
 					<div class="priceRow">
 					  <div class="statsboxCurrency">
 							  <div class="bitcoinCurrency">Anzahl Bitcoins im Umlauf:</div>
@@ -82,6 +88,8 @@
 					  </div>
 					</div>
 					<!-- Anzahl der Transaktionen in den letzten 24h-->
+					<!-- get information from https://blockchain.info/q/24hrtransactioncount als JSON OBJ
+						ersetzt "id" mit der zugegriffenen Information übergeben von getTransaction.send(); (js)-->
 					<div class="priceRow">
 					  <div class="statsboxCurrency">
 							  <div class="bitcoinCurrency">Anzahl Transaktionen 24h:</div>
@@ -91,6 +99,8 @@
 					  </div>
 					</div>
 					<!-- Anzahl gesendeter Bitcoin in den letzten 24h-->
+					<!-- get information from https://blockchain.info/q/24hrbtcsent als JSON OBJ
+						ersetzt "id" mit der zugegriffenen Information übergeben von getBitcoinsent.send(); (js)-->
 					<div class="priceRow">
 					  <div class="statsboxCurrency">
 							  <div class="bitcoinCurrency">Anzahl gesendeter Bitcoin 24h:</div>
@@ -100,6 +110,8 @@
 					  </div>
 					</div>
 					<!-- Aktuelle Hashrate-->
+					<!-- get information from https://blockchain.info/q/hashrate als JSON OBJ
+						ersetzt "id" mit der zugegriffenen Information übergeben von getHashrate.send(); (js)-->
 					<div class="priceRow">
 					  <div class="statsboxCurrency">
 							  <div class="bitcoinCurrency">Aktuelle Hashrate:</div>
@@ -109,6 +121,8 @@
 					  </div>
 					</div>
 					<!-- Aktueller Schwierigkeitsgrad-->
+					<!-- get information from https://api.blockchain.info/stats als JSON OBJ
+						ersetzt "id" mit der zugegriffenen Information übergeben von getStats.send(); (js)-->
 					<div class="priceRow">
 					  <div class="statsboxCurrency">
 							  <div class="bitcoinCurrency">Aktueller Schwierigkeitsgrad:</div>

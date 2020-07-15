@@ -1,6 +1,7 @@
 /**==========================================================================
     Get information from https://api.blockchain.info/stats
    ==========================================================================**/
+// get information from https://blockchain.info/ticker als JSON OBJ
 let urlStats = "https://api.blockchain.info/stats";
 let getStats = new XMLHttpRequest();
 getStats.open('GET', urlStats);
